@@ -21,3 +21,8 @@ Starstreak adalah serangkaian language models, yang disempurnakan dengan teknik 
 - **Language**: English, Indonesian, Achinese, Balinese, Banjar, Basa Banyumasan, Buginese, Gorontalo, Javanese, Maduranese, Minangkabau, Sundanese, Malay, Nias, and Tetum
 - **Demo Google Colab**: <a href=https://colab.research.google.com/drive/1QGImbhbb0vdTIbsxvQJPrfh0qDcADKGe>Google Colab</a>
 - **Demo HuggingFace Space**: HuggingFace Space
+
+&nbsp;
+
+**How to use**
+Untuk menggunakan model Startstreak, pastikan bahwa PyTorch telah terinstal dan Anda memiliki GPU Nvidia (atau gunakan Google Colab). Setelah itu, Anda perlu menginstal dependensi yang diperlukan:
