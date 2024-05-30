@@ -104,3 +104,20 @@ print(tokenizer.decode(outputs[0], skip_special_tokens=True))
 **License**
 
 Model ini dilisensikan di bawah lisensi <a href=https://creativecommons.org/publicdomain/zero/1.0/>CC0 1.0 Universal (CC0 1.0) Public Domain Dedication</a>.
+
+&nbsp;
+
+**Citation**
+
+```bash
+@software{Hafidh_Soekma_Startstreak_7b_beta_2023,
+  author = {Hafidh Soekma Ardiansyah},
+  month = october,
+  title = {Startstreak: Traditional Indonesian Multilingual Language Model},
+  url = {\url{https://huggingface.co/azale-ai/Starstreak-7b-beta}},
+  publisher = {HuggingFace},
+  journal = {HuggingFace Models},
+  version = {1.0},
+  year = {2023}
+}
+```
