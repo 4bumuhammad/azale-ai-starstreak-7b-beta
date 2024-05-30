@@ -26,3 +26,9 @@ Starstreak adalah serangkaian language models, yang disempurnakan dengan teknik 
 
 **How to use**
 Untuk menggunakan model Startstreak, pastikan bahwa PyTorch telah terinstal dan Anda memiliki GPU Nvidia (atau gunakan Google Colab). Setelah itu, Anda perlu menginstal dependensi yang diperlukan:
+```bash
+pip3 install -U git+https://github.com/huggingface/transformers.git
+pip3 install -U git+https://github.com/huggingface/peft.git
+pip3 install -U git+https://github.com/huggingface/accelerate.git
+pip3 install -U bitsandbytes==0.39.0 einops==0.6.1 sentencepiece
+```
