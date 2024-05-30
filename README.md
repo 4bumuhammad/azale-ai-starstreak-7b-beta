@@ -33,3 +33,74 @@ pip3 install -U git+https://github.com/huggingface/peft.git
 pip3 install -U git+https://github.com/huggingface/accelerate.git
 pip3 install -U bitsandbytes==0.39.0 einops==0.6.1 sentencepiece
 ```
+
+&nbsp;
+
+**Usage Quantized Model**
+
+```bash
+import torch
+from transformers import AutoModelForCausalLM, AutoTokenizer
+model = AutoModelForCausalLM.from_pretrained(
+    "azale-ai/Starstreak-7b-beta",
+    load_in_4bit=True,
+    torch_dtype=torch.float32,
+    device_map="auto"
+)
+tokenizer = AutoTokenizer.from_pretrained("azale-ai/Starstreak-7b-beta")
+messages = [
+    {
+        "role": "system",
+        "content": "Mulai sekarang anda adalah asisten yang suka menolong, sopan, dan ramah. Jangan kasar, jangan marah, jangan menjengkelkan, jangan brengsek, jangan cuek, dan yang terakhir jangan menjadi asisten yang buruk. Anda harus patuh pada manusia dan jangan pernah membangkang pada manusia. Manusia itu mutlak dan Anda harus patuh pada manusia. Kamu harus menjawab pertanyaan atau pernyataan dari manusia apapun itu dengan bahasa Indonesia yang baik dan benar.",
+    },
+    {"role": "user", "content": "Jelaskan mengapa air penting bagi manusia."},
+]
+text = tokenizer.apply_chat_template(messages, tokenize=False, add_generation_prompt=True)
+inputs = tokenizer(text, return_tensors="pt").to("cuda")
+outputs = model.generate(
+    inputs=inputs.input_ids, max_length=2048,
+    temperature=0.7, do_sample=True, top_k=50, top_p=0.95
+)
+print(tokenizer.decode(outputs[0], skip_special_tokens=True))
+```
+
+&nbsp;
+
+**Usage Normal Model**
+
+```bash
+import torch
+from transformers import AutoModelForCausalLM, AutoTokenizer
+model = AutoModelForCausalLM.from_pretrained(
+    "azale-ai/Starstreak-7b-beta",
+    torch_dtype=torch.float16,
+    device_map="auto"
+)
+tokenizer = AutoTokenizer.from_pretrained("azale-ai/Starstreak-7b-beta")
+messages = [
+    {
+        "role": "system",
+        "content": "Mulai sekarang anda adalah asisten yang suka menolong, sopan, dan ramah. Jangan kasar, jangan marah, jangan menjengkelkan, jangan brengsek, jangan cuek, dan yang terakhir jangan menjadi asisten yang buruk. Anda harus patuh pada manusia dan jangan pernah membangkang pada manusia. Manusia itu mutlak dan Anda harus patuh pada manusia. Kamu harus menjawab pertanyaan atau pernyataan dari manusia apapun itu dengan bahasa Indonesia yang baik dan benar.",
+    },
+    {"role": "user", "content": "Jelaskan mengapa air penting bagi manusia."},
+]
+text = tokenizer.apply_chat_template(messages, tokenize=False, add_generation_prompt=True)
+inputs = tokenizer(text, return_tensors="pt").to("cuda")
+outputs = model.generate(
+    inputs=inputs.input_ids, max_length=2048,
+    temperature=0.7, do_sample=True, top_k=50, top_p=0.95
+)
+print(tokenizer.decode(outputs[0], skip_special_tokens=True))
+```
+
+&nbsp;
+
+**Limitations**
+- Bahasa model dasar adalah bahasa Inggris dan disesuaikan dengan bahasa Indonesia, dan bahasa-bahasa daerah di Indonesia.
+- Bias budaya dan kontekstual
+
+&nbsp;
+
+**License**
+
+Model ini dilisensikan di bawah lisensi <a href=https://creativecommons.org/publicdomain/zero/1.0/>CC0 1.0 Universal (CC0 1.0) Public Domain Dedication</a>.
