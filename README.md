@@ -19,5 +19,5 @@ Starstreak adalah serangkaian language models, yang disempurnakan dengan teknik 
 - **Model Size**: 7B
 - **License**: CC0 1.0 Universal (CC0 1.0) Public Domain Dedication
 - **Language**: English, Indonesian, Achinese, Balinese, Banjar, Basa Banyumasan, Buginese, Gorontalo, Javanese, Maduranese, Minangkabau, Sundanese, Malay, Nias, and Tetum
-- **Demo Google Colab**: Google Colab
+- **Demo Google Colab**: <a href=https://colab.research.google.com/drive/1QGImbhbb0vdTIbsxvQJPrfh0qDcADKGe>Google Colab</a>
 - **Demo HuggingFace Space**: HuggingFace Space
