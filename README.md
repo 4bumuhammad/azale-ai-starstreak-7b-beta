@@ -14,7 +14,7 @@ Starstreak adalah serangkaian language models, yang disempurnakan dengan teknik 
 
 **Model Details**
 
-- **Finetuned from model**: HuggingFaceH4/zephyr-7b-beta
+- **Finetuned from model**: <a href=https://huggingface.co/HuggingFaceH4/zephyr-7b-beta>HuggingFaceH4/zephyr-7b-beta</a>
 - **Dataset**: graelo/wikipedia and uonlp/CultruaX
 - **Model Size**: 7B
 - **License**: CC0 1.0 Universal (CC0 1.0) Public Domain Dedication
